@@ -44,6 +44,13 @@ helm upgrade -i helm-operator fluxcd/helm-operator \
 --set helm.versions=v3
 ```
 
+### 3. ingress
+https://kubernetes.github.io/ingress-nginx/  
+
+```bash
+minikube addons enable ingress
+```
+
 ## トラブルシューティング履歴
 
 #### checkpoint1（83ebc） のマニフェストでは redis-dev が起動しなかった
