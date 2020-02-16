@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hello-world-cluster-ip-service-dev
+  namespace: dev
 spec:
   type: ClusterIP
   selector:
