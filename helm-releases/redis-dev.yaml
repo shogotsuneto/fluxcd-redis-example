@@ -1,0 +1,15 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: redis-dev
+  namespace: dev
+spec:
+  releaseName: redis-dev
+  chart:
+    # stable/redis
+    repository: https://kubernetes-charts.storage.googleapis.com
+    name: redis
+  values:
+    sentinel:
+      password: password
+      enabled: true
