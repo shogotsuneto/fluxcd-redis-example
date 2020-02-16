@@ -9,7 +9,7 @@ spec:
     # stable/redis
     repository: https://kubernetes-charts.storage.googleapis.com
     name: redis
-    version: 5.0.7
+    version: 10.5.1
   values:
     sentinel:
       password: password
