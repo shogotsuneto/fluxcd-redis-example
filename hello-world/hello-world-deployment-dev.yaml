@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: hello-world-deployment-dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-world
+      environment: dev
+  template:
+    metadata:
+      labels:
+        app: hello-world
+        environment: dev
+    spec:
+      containers:
+        - name: hello-world
+          image: tutum/hello-world
+          ports:
+            - containerPort: 80

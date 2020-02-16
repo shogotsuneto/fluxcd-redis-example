@@ -10,5 +10,5 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: nginx-ingress-default-backend
+              serviceName: hello-world-cluster-ip-service-dev
               servicePort: 80
