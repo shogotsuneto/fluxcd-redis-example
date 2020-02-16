@@ -44,13 +44,13 @@ helm upgrade -i helm-operator fluxcd/helm-operator \
 --set helm.versions=v3
 ```
 
-### トラブルシューティング
+## トラブルシューティング履歴
 
 #### checkpoint1（83ebc） のマニフェストでは redis-dev が起動しなかった
 
 ```bash
 kubectl get -n fluxcd pods
-kubectl logs -n fluxcd flux- #flux podの名前
+kubectl logs -n fluxcd flux-asdfasdfasd #flux podの名前
 ```
 
 今回得られたログ
@@ -60,6 +60,19 @@ ts=2020-02-16T09:00:19.332979089Z caller=sync.go:165 component=daemon err="dev:h
 ```
 
 version の指定が必要
+
+
+#### checkpoint2 でのエラー
+
+
+```bash
+kubectl logs -n fluxcd helm-operator-dlkjglasjdfljasdlfj # helm operatorの名前
+```
+
+```
+ts=2020-02-16T09:15:22.147272829Z caller=release.go:140 component=release release=redis-dev targetNamespace=dev resource=dev:helmrelease/redis-dev helmVersion=v3 error="chart unavailable: chart \"redis\" version \"5.0.7\" not found in https://kubernetes-charts.storage.googleapis.com repository"
+```
+
 
 ## 参考資料等
 https://helm.sh/docs/  
